@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSocket Frontend</title>
+</head>
+<body>
+<script>
+    const wsServer = "ws://127.0.0.1:9509";
+    const webSocket = new WebSocket(wsServer);
+    webSocket.onopen = function (event) {
+        console.log('success')
+    }
+    webSocket.onclose = function (event) {
+        console.log('close')
+    }
+    webSocket.onmessage = function (event) {
+        console.log(event.data)
+    }
+    webSocket.onerror = function (event,e) {
+        console.log('error')
+    }
+</script>
+</body>
+</html>
